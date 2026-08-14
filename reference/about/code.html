@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Socialitea - The Philosophy</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#ffdad5",
+                        "primary": "#0001bb",
+                        "on-primary": "#ffffff",
+                        "outline": "#757589",
+                        "on-background": "#00006e",
+                        "surface-variant": "#e0e0ff",
+                        "on-surface": "#00006e",
+                        "secondary-container": "#dfe0e0",
+                        "surface-container-high": "#e7e6ff",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "on-surface-variant": "#454558",
+                        "surface": "#fbf8ff",
+                        "primary-fixed-dim": "#bec2ff",
+                        "inverse-on-surface": "#f1efff",
+                        "surface-tint": "#343dff",
+                        "error-container": "#ffdad6",
+                        "background": "#fbf8ff",
+                        "on-secondary-container": "#616363",
+                        "tertiary-fixed-dim": "#ffb4a9",
+                        "inverse-primary": "#bec2ff",
+                        "primary-container": "#0000ff",
+                        "on-primary-container": "#b3b7ff",
+                        "secondary": "#5d5f5f",
+                        "inverse-surface": "#0001ac",
+                        "tertiary": "#720001",
+                        "on-secondary-fixed-variant": "#454747",
+                        "surface-container": "#eeecff",
+                        "on-tertiary-fixed": "#410000",
+                        "primary-fixed": "#e0e0ff",
+                        "on-primary-fixed-variant": "#0000ef",
+                        "on-tertiary": "#ffffff",
+                        "surface-bright": "#fbf8ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#00006e",
+                        "surface-container-low": "#f5f2ff",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#ffa598",
+                        "outline-variant": "#c5c4db",
+                        "on-tertiary-fixed-variant": "#930002",
+                        "surface-container-highest": "#e0e0ff",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#e2e2e2",
+                        "surface-dim": "#d6d7ff",
+                        "tertiary-container": "#9d0002"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px", /* Overridden for Neo-Brutalism strictness */
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "border-width": "2px",
+                        "unit": "4px",
+                        "gutter": "0px",
+                        "margin-page": "24px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "body-lg": ["Space Mono"],
+                        "headline-lg": ["Playfair Display"],
+                        "label-caps": ["Space Mono"],
+                        "headline-md": ["Playfair Display"],
+                        "body-md": ["Space Mono"],
+                        "display-xl": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["40px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg": ["64px", {"lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "headline-md": ["32px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "display-xl": ["120px", {"lineHeight": "100px", "letterSpacing": "-0.04em", "fontWeight": "900"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Monochrome Dither Simulation */
+        .monochrome-bitmap {
+            filter: grayscale(100%) contrast(150%) brightness(110%);
+            mix-blend-mode: luminosity;
+        }
+        /* Custom Selection */
+        ::selection {
+            background-color: #0001bb;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body class="bg-surface-container-lowest text-primary antialiased min-h-screen flex flex-col font-body-md uppercase selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar Shared Component -->
+<!-- Executing style_* keys strictly, falling back to brand tokens for missing abstract classes -->
+<nav class="fixed top-0 w-full z-50 bg-glass-surface dark:bg-glass-surface backdrop-blur-xl border-b-[2px] border-primary bg-surface-container-lowest transition-all duration-300">
+<div class="flex justify-between items-center w-full px-4 md:px-8 h-16 max-w-container-max mx-auto">
+<!-- Brand Logo -->
+<a class="font-label-caps text-label-caps font-black tracking-tighter text-primary dark:text-primary uppercase border-[2px] border-transparent hover:bg-primary hover:text-on-primary transition-colors px-2 py-1" href="#">
+                SOCIALITEA
+            </a>
+<!-- Navigation Links -->
+<div class="hidden md:flex items-center space-x-8 h-full">
+<a class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-ice-blue transition-colors hover:bg-glass-surface duration-300 h-full flex items-center px-4 border-l-[2px] border-r-[2px] border-transparent hover:border-primary" href="#">
+                    DOCS
+                </a>
+<a class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-ice-blue transition-colors hover:bg-glass-surface duration-300 h-full flex items-center px-4 border-l-[2px] border-r-[2px] border-transparent hover:border-primary" href="#">
+                    MENU
+                </a>
+</div>
+<!-- Trailing Action -->
+<a class="font-label-caps text-label-caps uppercase tracking-widest text-primary dark:text-primary border-[2px] border-primary px-4 py-2 hover:bg-primary hover:text-on-primary transition-all duration-300 active:scale-95 flex items-center gap-2" href="#">
+                VISIT <span class="material-symbols-outlined" style="font-size: 14px;">arrow_forward</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<!-- Rigid CSS Grid Philosophy: 12-column grid, 0px gutters, layout divisions marked by 2px solid Blue borders -->
+<main class="flex-grow w-full max-w-container-max mx-auto pt-16 border-l-[2px] border-r-[2px] border-primary min-h-screen">
+<!-- Header Section -->
+<header class="border-b-[2px] border-primary bg-surface-container-lowest">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-display-xl md:text-display-xl text-primary p-4 md:p-8 uppercase break-words border-b-[2px] md:border-b-0 border-primary">
+                THE PHILOSOPHY
+            </h1>
+</header>
+<!-- Two-Column Layout Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 w-full">
+<!-- Left Column: Raw Text & Terminal Metadata -->
+<div class="col-span-1 md:col-span-7 border-b-[2px] md:border-b-0 md:border-r-[2px] border-primary flex flex-col">
+<!-- Terminal-style Metadata / Stats Block -->
+<div class="border-b-[2px] border-primary bg-surface-container-lowest">
+<div class="flex border-b-[2px] border-primary">
+<div class="w-1/3 p-3 border-r-[2px] border-primary font-label-caps text-label-caps bg-primary text-on-primary">
+                            SYSTEM STATUS
+                        </div>
+<div class="w-2/3 p-3 font-label-caps text-label-caps text-primary tracking-widest">
+                            OPTIMAL // OPERATIONAL
+                        </div>
+</div>
+<div class="flex border-b-[2px] border-primary">
+<div class="w-1/3 p-3 border-r-[2px] border-primary font-label-caps text-label-caps text-primary">
+                            ARCHITECTURE
+                        </div>
+<div class="w-2/3 p-3 font-label-caps text-label-caps text-primary">
+                            NEO-BRUTALIST PROTOCOL v2.4
+                        </div>
+</div>
+<div class="flex">
+<div class="w-1/3 p-3 border-r-[2px] border-primary font-label-caps text-label-caps text-primary">
+                            DATA STREAM
+                        </div>
+<div class="w-2/3 p-3 font-label-caps text-label-caps text-primary">
+                            UNFILTERED AESTHETIC DIRECTIVE
+                        </div>
+</div>
+</div>
+<!-- Raw Text Area -->
+<div class="p-4 md:p-8 flex-grow">
+<p class="font-body-lg text-body-lg text-primary mb-8 leading-relaxed max-w-2xl">
+                        WE REJECT THE ORNAMENTAL SOFTNESS OF MODERN INTERFACES. SOCIALITEA OPERATES ON A STRICT DOCTRINE OF MINIMAL INTERFERENCE AND STRUCTURAL EXPOSURE. EVERY BORDER IS A BOUNDARY; EVERY FONT WEIGHT IS A DECLARATION OF INTENT.
+                    </p>
+<p class="font-body-lg text-body-lg text-primary mb-8 leading-relaxed max-w-2xl">
+                        THIS IS NOT DESIGN AS DECORATION. THIS IS DESIGN AS INFRASTRUCTURE. WE STRIP AWAY GRADIENTS, BLURS, AND ILLUSORY DEPTH TO REVEAL THE RAW LOGIC BENEATH. THE RESULT IS AN ENVIRONMENT OF TECHNICAL AUTHORITY AND HIGH-SPEED DATA TRANSMISSION.
+                    </p>
+<!-- Technical List -->
+<div class="mt-12 border-t-[2px] border-primary">
+<div class="flex items-start py-4 border-b-[2px] border-primary hover:bg-primary hover:text-on-primary transition-colors group">
+<span class="font-label-caps text-label-caps w-12 pt-1 group-hover:text-on-primary">[01]</span>
+<div class="font-body-md text-body-md">
+                                ABSOLUTE FLATNESS: ZERO PERCEIVED DEPTH. HIERARCHY IS ENFORCED THROUGH LAYER STACKING AND INK-ON-PAPER STARKNESS.
+                            </div>
+</div>
+<div class="flex items-start py-4 border-b-[2px] border-primary hover:bg-primary hover:text-on-primary transition-colors group">
+<span class="font-label-caps text-label-caps w-12 pt-1 group-hover:text-on-primary">[02]</span>
+<div class="font-body-md text-body-md">
+                                GRID COMPLIANCE: EVERY ELEMENT ALIGNS TO A STRICT 4PX BASELINE. NO EXCEPTIONS.
+                            </div>
+</div>
+<div class="flex items-start py-4 border-b-[2px] border-primary hover:bg-primary hover:text-on-primary transition-colors group">
+<span class="font-label-caps text-label-caps w-12 pt-1 group-hover:text-on-primary">[03]</span>
+<div class="font-body-md text-body-md">
+                                EDITORIAL CONTRAST: HIGH-KEY MONOCHROMATIC VISION. ABSENCE OF COLOR AS A STATEMENT OF POWER.
+                            </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Monochrome Bitmap-Style Images -->
+<div class="col-span-1 md:col-span-5 bg-surface-container-lowest flex flex-col p-4 md:p-8 gap-8 relative">
+<!-- Background grid lines simulation -->
+<div class="absolute inset-0 pointer-events-none opacity-10" style="background-image: linear-gradient(#0001bb 1px, transparent 1px), linear-gradient(90deg, #0001bb 1px, transparent 1px); background-size: 20px 20px;"></div>
+<!-- Image Card 1 -->
+<div class="border-[2px] border-primary bg-surface-container-lowest relative z-10">
+<!-- Offset Stack Effect Border -->
+<div class="absolute inset-0 border-[2px] border-primary translate-x-2 translate-y-2 -z-10 bg-surface-container-lowest"></div>
+<div class="p-2 border-b-[2px] border-primary flex justify-between items-center bg-primary text-on-primary">
+<span class="font-label-caps text-label-caps">FIG 1.0 // STRUCTURAL</span>
+<span class="material-symbols-outlined" style="font-size: 16px;">terminal</span>
+</div>
+<div class="p-2">
+<img class="w-full h-auto object-cover monochrome-bitmap border-[2px] border-primary aspect-[4/3]" data-alt="A high-contrast, stark monochrome digital image of brutalist architecture. The building features harsh, geometric concrete lines cutting sharply against a blown-out, pure white sky. The aesthetic resembles an avant-garde fashion lookbook shot on technical film, characterized by extreme sharpness, devoid of any softness or warmth. Deep blue-black shadows emphasize the structural integrity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2ZeM9wPoi_wxGxZS3U9x4SPesX_kCZq_8XhtaeBntO2wf_FN8nZUr6MKPngPwUS3SjfBDwnIsxLtqiOvPTnMn6OKy4sAl_L6l4vloB9DkTXoZxcvwX8Z_QmF2QXIejet05EPWyvQQYEYJfOK-9LG7Erv6YJOeDI4BNSHT8ZX3NPWPENLU46LMLwRDEpISyGMGXIokufuB8PUpmhcwG8ykHdxdecKZ03w1iDTVEWfIYcLKnmcFWtJGPg"/>
+</div>
+</div>
+<!-- Image Card 2 -->
+<div class="border-[2px] border-primary bg-surface-container-lowest relative z-10 mt-8">
+<!-- Offset Stack Effect Border -->
+<div class="absolute inset-0 border-[2px] border-primary translate-x-2 translate-y-2 -z-10" style="background-image: repeating-linear-gradient(45deg, #0001bb, #0001bb 1px, #ffffff 1px, #ffffff 4px);"></div>
+<div class="p-2 border-b-[2px] border-primary flex justify-between items-center bg-surface-container-lowest text-primary">
+<span class="font-label-caps text-label-caps">FIG 2.0 // HARDWARE</span>
+<span class="material-symbols-outlined" style="font-size: 16px;">dns</span>
+</div>
+<div class="p-2">
+<img class="w-full h-auto object-cover monochrome-bitmap border-[2px] border-primary aspect-[3/4]" data-alt="A retro-tech, high-contrast monochrome close-up of a vintage server rack or complex electronic mainframe. Thick technical cables and harsh metallic edges are highlighted by stark, directional white light. The image has a raw, dithered bitmap quality, looking like an ink-on-paper schematic or an old editorial photograph from a computing manual, utilizing solid black voids and pristine white highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdVlVDFjzP3cvyT0dhueLfacWb-ey6RsvIZWxwH9jqJQB7-KnQ6YU0ox7IM3pExF_Ew7yvieSy9HA6fkYj7hb5nO8dNtWJjpe2YKfzfM5PQhN1yKb68INTXaQLgXnCRnOyzPK9qiNQpMo06u-nLhLPNreXghZdc_JAntjZfA7ZbX8kG3wmLMVjBq-Soud2WPPa_ZejAHXI1BMpfhHtpOKjy-euS3Sp5hb8KXbsmMOApEs5Z59ZjFAPfA"/>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Shared Component -->
+<footer class="w-full border-t-[2px] border-primary bg-surface-container-lowest mt-0 font-label-caps text-label-caps uppercase">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-0 w-full max-w-container-max mx-auto border-l-[2px] border-r-[2px] border-primary">
+<!-- Left Side: Links -->
+<div class="flex flex-col border-b-[2px] md:border-b-0 md:border-r-[2px] border-primary">
+<a class="p-4 border-b-[2px] border-primary text-outline hover:text-primary hover:bg-surface-variant transition-colors flex justify-between items-center" href="#">
+                    CONTACT <span class="material-symbols-outlined" style="font-size: 16px;">arrow_outward</span>
+</a>
+<a class="p-4 border-b-[2px] border-primary text-outline hover:text-primary hover:bg-surface-variant transition-colors flex justify-between items-center" href="#">
+                    LOCATION <span class="material-symbols-outlined" style="font-size: 16px;">arrow_outward</span>
+</a>
+<a class="p-4 text-outline hover:text-primary hover:bg-surface-variant transition-colors flex justify-between items-center" href="#">
+                    INSTAGRAM <span class="material-symbols-outlined" style="font-size: 16px;">arrow_outward</span>
+</a>
+</div>
+<!-- Right Side: Brand & Copyright -->
+<div class="flex flex-col justify-between p-4 md:p-8 bg-surface-container-lowest">
+<div class="font-headline-md text-headline-md text-primary tracking-tighter mb-8 md:mb-0">
+                    SOCIALITEA
+                </div>
+<div class="text-primary mt-auto flex items-end">
+                    © 2024 SOCIALITEA. ALL RIGHTS RESERVED.
+                </div>
+</div>
+</div>
+</footer>
+</body></html>

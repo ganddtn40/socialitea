@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Menu Socialitea — kopi spesialis, matcha, teh, susu &amp; cokelat, mocktail, makanan dan snack. Harga mulai Rp 10K." name="description"/>
+<title>Menu — Socialitea | Teh &amp; Kopi Spesialis</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<link href="favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="assets/css/site.css" rel="stylesheet"/>
+<script src="assets/js/site.js" defer></script>
+<noscript><style>[data-reveal]{opacity:1;transform:none}</style></noscript>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary": "#0001bb",
+                      "on-primary": "#ffffff",
+                      "outline": "#757589",
+                      "on-background": "#00006e",
+                      "surface-variant": "#e0e0ff",
+                      "on-surface": "#00006e",
+                      "surface-container-high": "#e7e6ff",
+                      "on-surface-variant": "#454558",
+                      "surface": "#fbf8ff",
+                      "background": "#fbf8ff",
+                      "surface-container": "#eeecff",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-low": "#f5f2ff",
+                      "surface-container-highest": "#e0e0ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0px",
+                      "lg": "0px",
+                      "xl": "0px",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "border-width": "2px",
+                      "unit": "4px",
+                      "gutter": "0px",
+                      "margin-page": "24px",
+                      "container-max": "1440px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": ["Playfair Display"],
+                      "body-lg": ["Space Mono"],
+                      "headline-lg": ["Playfair Display"],
+                      "label-caps": ["Space Mono"],
+                      "headline-md": ["Playfair Display"],
+                      "body-md": ["Space Mono"],
+                      "display-xl": ["Playfair Display"]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": ["clamp(1.75rem, 5vw + 0.5rem, 2.5rem)", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-lg": ["clamp(2rem, 4vw + 0.75rem, 4rem)", {"lineHeight": "1.05", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                      "headline-md": ["clamp(1.5rem, 2.5vw + 0.75rem, 2rem)", {"lineHeight": "1.1", "fontWeight": "700"}],
+                      "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "display-xl": ["clamp(3rem, 8vw + 0.5rem, 7.5rem)", {"lineHeight": "0.95", "letterSpacing": "-0.04em", "fontWeight": "900"}]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="min-h-screen flex flex-col font-body-md text-body-md antialiased selection:bg-primary selection:text-surface-container-lowest">
+<!-- ===== NAVBAR ===== -->
+<nav class="nav w-full sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-4 sm:px-6 lg:px-8 h-16 max-w-container-max mx-auto">
+<a class="nav-link font-label-caps text-label-caps font-black tracking-tighter text-primary flex items-center gap-2" href="index.html">
+<i data-lucide="cup-soda" class="w-5 h-5"></i> SOCIALITEA
+</a>
+<div class="hidden md:flex h-full">
+<a class="nav-link h-full flex items-center px-4 font-label-caps text-label-caps tracking-widest text-primary" href="index.html">BERANDA</a>
+<a class="h-full flex items-center px-4 font-label-caps text-label-caps tracking-widest bg-primary text-surface-container-lowest" href="menu.html">MENU</a>
+<a class="nav-link h-full flex items-center px-4 font-label-caps text-label-caps tracking-widest text-primary" href="about.html">TENTANG</a>
+<a class="nav-link h-full flex items-center px-4 font-label-caps text-label-caps tracking-widest text-primary" href="location.html">LOKASI</a>
+</div>
+<div class="flex items-center gap-2">
+<a class="hidden md:flex h-11 px-4 items-center border-technical bg-surface-container-lowest text-primary font-label-caps text-label-caps tracking-widest btn-neo gap-2" href="https://wa.me/6285247113766?text=Halo%20Socialitea,%20saya%20ingin%20tanya%20mengenai%20lokasi/menu" target="_blank" rel="noopener">
+<i data-lucide="message-circle" class="w-4 h-4"></i> PESAN SEKARANG
+</a>
+<button id="mobile-menu-toggle" class="md:hidden flex items-center justify-center w-12 h-12 border-technical text-primary" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="mobile-menu">
+<span class="hamburger"><span></span><span></span><span></span></span>
+</button>
+</div>
+</div>
+<div id="mobile-menu" class="mobile-panel md:hidden border-technical-t border-technical-b bg-surface-container-lowest">
+<a class="block px-4 sm:px-6 py-4 font-label-caps text-label-caps tracking-widest text-primary" href="index.html">BERANDA</a>
+<a class="block px-4 sm:px-6 py-4 font-label-caps text-label-caps tracking-widest bg-primary text-on-primary" href="menu.html">MENU</a>
+<a class="block px-4 sm:px-6 py-4 font-label-caps text-label-caps tracking-widest text-primary" href="about.html">TENTANG</a>
+<a class="block px-4 sm:px-6 py-4 font-label-caps text-label-caps tracking-widest text-primary" href="location.html">LOKASI</a>
+<a class="block px-4 sm:px-6 py-4 font-label-caps text-label-caps tracking-widest bg-primary text-on-primary" href="https://wa.me/6285247113766?text=Halo%20Socialitea,%20saya%20ingin%20tanya%20mengenai%20lokasi/menu" target="_blank" rel="noopener">PESAN VIA WHATSAPP</a>
+</div>
+</nav>
+<!-- ===== HERO ===== -->
+<main class="flex-grow w-full max-w-container-max mx-auto border-technical-l border-technical-r">
+<section data-reveal class="border-technical-b p-4 sm:p-6 lg:p-10 relative overflow-hidden bg-surface-container-lowest">
+<h1 class="font-display-xl text-display-xl text-primary uppercase text-left mt-4 mb-4 tracking-tighter leading-none">MENU KAMI</h1>
+<p class="font-body-lg text-body-lg max-w-2xl border-technical-t pt-4">
+                Teh &amp; kopi spesialis, mocktail menyegarkan, dan hidangan rumahan. Semua diracik fresh, siap menemani nongkrongmu. Harga sudah termasuk PPN.
+            </p>
+</section>
+<!-- ===== FILTER CHIPS ===== -->
+<section class="border-technical-b bg-surface-container-low p-4 md:px-8 sticky top-16 z-40">
+<div class="flex flex-wrap gap-2 font-label-caps text-label-caps tracking-widest">
+<button class="chip active border-technical px-4 py-2" data-filter="all">SEMUA</button>
+<button class="chip border-technical px-4 py-2" data-filter="best-seller">BEST SELLER</button>
+<button class="chip border-technical px-4 py-2" data-filter="coffee">KOPI</button>
+<button class="chip border-technical px-4 py-2" data-filter="matcha">MATCHA</button>
+<button class="chip border-technical px-4 py-2" data-filter="tea">TEH</button>
+<button class="chip border-technical px-4 py-2" data-filter="milk">SUSU &amp; COKELAT</button>
+<button class="chip border-technical px-4 py-2" data-filter="food">MAKANAN &amp; SNACK</button>
+</div>
+</section>
+<!-- ===== BEST SELLER ===== -->
+<section class="border-technical-b" data-category="best-seller">
+<div data-reveal class="bg-primary text-on-primary px-4 sm:px-6 py-3 border-technical-b flex items-center justify-between">
+<h2 class="font-headline-md text-headline-md uppercase tracking-tight flex items-center gap-3"><i data-lucide="flame" class="w-6 h-6"></i> BEST SELLER</h2>
+<i data-lucide="star" class="w-5 h-5"></i>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" data-reveal-stagger>
+<div data-reveal class="m-4 md:m-6 bg-surface-container-lowest border-technical shadow-neo relative flex flex-col">
+<div class="p-5 border-technical-b flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md text-primary">CHOCO JAVA CHIPS</h3>
+<i data-lucide="coffee" class="w-5 h-5"></i>
+</div>
+<div class="p-5 flex-grow">
+<p class="font-body-md text-body-md text-primary opacity-80 mb-4">Espresso dengan cokelat dan remahan java chips. Manis-pahit yang bikin nagih.</p>
+<div class="font-headline-md text-headline-md text-primary">Rp 35K</div>
+</div>
+<a class="block border-technical-t p-4 font-label-caps text-label-caps tracking-widest text-primary btn-neo flex items-center justify-center gap-2" href="https://wa.me/6285247113766?text=Halo%20Socialitea%2C%20saya%20mau%20pesan%20*Choco%20Java%20Chips*%20(35K)" target="_blank" rel="noopener"><i data-lucide="message-circle" class="w-4 h-4"></i> PESAN</a>
+</div>
+<div data-reveal class="m-4 md:m-6 bg-surface-container-lowest border-technical shadow-neo relative flex flex-col">
+<div class="p-5 border-technical-b flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md text-primary">ICED CARAMEL VANILLA</h3>
+<i data-lucide="glass-water" class="w-5 h-5"></i>
+</div>
+<div class="p-5 flex-grow">
+<p class="font-body-md text-body-md text-primary opacity-80 mb-4">Vanilla segar dengan karamel lembut di atas es. Favorit sepanjang masa.</p>
+<div class="font-headline-md text-headline-md text-primary">Rp 30K</div>
+</div>
+<a class="block border-technical-t p-4 font-label-caps text-label-caps tracking-widest text-primary btn-neo flex items-center justify-center gap-2" href="https://wa.me/6285247113766?text=Halo%20Socialitea%2C%20saya%20mau%20pesan%20*Iced%20Caramel%20Vanilla*%20(30K)" target="_blank" rel="noopener"><i data-lucide="message-circle" class="w-4 h-4"></i> PESAN</a>
+</div>
+<div data-reveal class="m-4 md:m-6 bg-surface-container-lowest border-technical shadow-neo relative flex flex-col sm:col-span-2 lg:col-span-1">
+<div class="p-5 border-technical-b flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md text-primary">GREEN TEA ICE CARAMEL</h3>
+<i data-lucide="leaf" class="w-5 h-5"></i>
+</div>
+<div class="p-5 flex-grow">
+<p class="font-body-md text-body-md text-primary opacity-80 mb-4">Green tea creamy dengan sirup karamel. Dingin, manis, dan menyegarkan.</p>
+<div class="font-headline-md text-headline-md text-primary">Rp 35K</div>
+</div>
+<a class="block border-technical-t p-4 font-label-caps text-label-caps tracking-widest text-primary btn-neo flex items-center justify-center gap-2" href="https://wa.me/6285247113766?text=Halo%20Socialitea%2C%20saya%20mau%20pesan%20*Green%20Tea%20Ice%20Caramel*%20(35K)" target="_blank" rel="noopener"><i data-lucide="message-circle" class="w-4 h-4"></i> PESAN</a>
+</div>
+</div>
+</section>
+<!-- ===== COFFEE ===== -->
+<section class="border-technical-b" data-category="coffee">
+<div data-reveal class="bg-primary text-on-primary px-4 sm:px-6 py-3 border-technical-b flex items-center justify-between">
+<h2 class="font-headline-md text-headline-md uppercase tracking-tight flex items-center gap-3"><i data-lucide="coffee" class="w-6 h-6"></i> KOPI</h2>
+<i data-lucide="coffee" class="w-5 h-5"></i>
+</div>
+<div class="p-4 sm:p-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6" data-reveal-stagger>
+<div data-reveal class="border-technical p-5 flex flex-col">
+<div class="flex items-baseline justify-between gap-4 mb-2 flex-wrap">
+<h3 class="font-headline-md text-headline-md text-primary">AMERICANO</h3>
+<span class="font-label-caps text-label-caps text-primary whitespace-nowrap border-technical px-2 py-1 bg-surface-variant">ICE 20K · HOT 18K</span>
+</div>
+<p class="font-body-md text-body-md text-primary opacity-80 mb-4">Klasik, tegas, tanpa gula. Espresso dengan air panas atau es.</p>
+<a class="mt-auto self-start px-4 py-3 border-technical font-label-caps text-label-caps tracking-widest text-primary btn-neo flex items-center gap-2" href="https://wa.me/6285247113766?text=Halo%20Socialitea%2C%20saya%20mau%20pesan%20*Americano*%20(Ice%2020K%20%2F%20Hot%2018K)" target="_blank" rel="noopener"><i data-lucide="message-circle" class="w-4 h-4"></i> PESAN</a>
+</div>
+<div data-reveal class="border-technical p-5 flex flex-col">
+<div class="flex items-baseline justify-between gap-4 mb-2 flex-wrap">
+<h3 class="font-headline-md text-headline-md text-primary">SOCIALITEA SIGNATURE</h3>
+<span class="font-label-caps text-label-caps text-primary whitespace-nowrap border-technical px-2 py-1 bg-surface-variant">20K</span>
+</div>
+<p class="font-body-md text-body-md text-primary opacity-80 mb-4">Perpaduan rahasia khas Socialitea. Manis, creamy, aromatik.</p>
+<a class="mt-auto self-start px-4 py-3 border-technical font-label-caps text-label-caps tracking-widest text-primary btn-neo flex items-center gap-2" href="https://wa.me/6285247113766?text=Halo%20Socialitea%2C%20saya%20mau%20pesan%20*Socialitea%20Signature*%20(20K)" target="_blank" rel="noopener"><i data-lucide="message-circle" class="w-4 h-4"></i> PESAN</a>
+</div>
+<div data-reveal class="border-technical p-5 flex flex-col">
+<div class="flex items-baseline justify-between gap-4 mb-2 flex-wrap">
+<h3 class="font-headline-md text-headline-md text-primary">POPCORN CARAMEL</h3>
+<span class="font-label-caps text-label-caps text-primary whitespace-nowrap border-technical px-2 py-1 bg-surface-variant">25K</span>
+</div>
+<p class="font-body-md text-body-md text-primary opacity-80 mb-4">Kopi dengan sirup caramel popcorn. Unik dan menyenangkan.</p>
+<a class="mt-auto self-start px-4 py-3 border-technical font-label-caps text-label-caps tracking-widest text-primary btn-neo flex items-center gap-2" href="https://wa.me/6285247113766?text=Halo%20Socialitea%2C%20saya%20mau%20pesan%20*Popcorn%20Caramel*%20(25K)" target="_blank" rel="noopener"><i data-lucide="message-circle" class="w-4 h-4"></i> PESAN</a>
+</div>
+<div data-reveal class="border-technical p-5 flex flex-col">
+<div class="flex items-baseline justify-between gap-4 mb-2 flex-wrap">
+<h3 class="font-headline-md text-headline-md text-primary">SALTED CARAMEL CRUMBLE</h3>
+<span class="font-label-caps text-label-caps text-primary whitespace-nowrap border-technical px-2 py-1 bg-surface-variant">25K</span>
+</div>
+<p class="font-body-md text-body-md text-primary opacity-80 mb-4">Caramel asin dengan remahan crumble. Gurih-manis seimbang.</p>
+<a class="mt-auto self-start px-4 py-3 border-technical font-label-caps text-label-caps tracking-widest text-primary btn-neo flex items-center gap-2" href="https://wa.me/6285247113766?text=Halo%20Socialitea%2C%20saya%20mau%20pesan%20*Salted%20Caramel%20Crumble*%20(25K)" target="_blank" rel="noopener"><i data-lucide="message-circle" class="w-4 h-4"></i> PESAN</a>
+</div>
+<div data-reveal class="border-technical p-5 flex flex-col">
+<div class="flex items-baseline justify-between gap-4 mb-2 flex-wrap">
+<h3 class="font-headline-md text-headline-md text-primary">CREME BRULEE</h3>
+<span class="font-label-caps text-label-caps text-primary whitespace-nowrap border-technical px-2 py-1 bg-surface-variant">25K</span>
+</div>
+<p class="font-body-md text-body-md text-primary opacity-80 mb-4">Terinspirasi dessert Prancis. Lembut, creamy, dan manis.</p>
+<a class="mt-auto self-start px-4 py-3 border-technical font-label-caps text-label-caps tracking-widest text-primary btn-neo flex items-center gap-2" href="https://wa.me/6285247113766?text=Halo%20Socialitea%2C%20saya%20mau%20pesan%20*Creme%20Brulee*%20(25K)" target="_blank" rel="noopener"><i data-lucide="message-circle" class="w-4 h-4"></i> PESAN</a>
+</div>
+<div data-reveal class="border-technical p-5 flex flex-col">
+<div class="flex items-baseline justify-between gap-4 mb-2 flex-wrap">
+<h3 class="font-headline-md text-headline-md text-primary">BUTTERSCOTCH LOTUS</h3>
+<span class="font-label-caps text-label-caps text-primary whitespace-nowrap border-technical px-2 py-1 bg-surface-variant">25K</span>
+</div>
+<p class="font-body-md text-body-md text-primary opacity-80 mb-4">Butterscotch dengan biskuit Lotus. Rich dan berkarakter.</p>
+<a class="mt-auto self-start px-4 py-3 border-technical font-label-caps text-label-caps tracking-widest text-primary btn-neo flex items-center gap-2" href="https://wa.me/6285247113766?text=Halo%20Socialitea%2C%20saya%20mau%20pesan%20*Butterscotch%20Lotus*%20(25K)" target="_blank" rel="noopener"><i data-lucide="message-circle" class="w-4 h-4"></i> PESAN</a>
+</div>
+<div data-reveal class="border-technical p-5 flex flex-col">
+<div class="flex items-baseline justify-between gap-4 mb-2 flex-wrap">
+<h3 class="font-headline-md text-headline-md text-primary">BROWN SUGAR COFFEE</h3>
+<span class="font-label-caps text-label-caps text-primary whitespace-nowrap border-technical px-2 py-1 bg-surface-variant">28K</span>
+</div>
+<p class="font-body-md text-body-md text-primary opacity-80 mb-4">Kopi dengan lelehan brown sugar. Hangat, manis, dan membumi.</p>
+<a class="mt-auto self-start px-4 py-3 border-technical font-label-caps text-label-caps tracking-widest text-primary btn-neo flex items-center gap-2" href="https://wa.me/6285247113766?text=Halo%20Socialitea%2C%20saya%20mau%20pesan%20*Brown%20Sugar%20Coffee*%20(28K)" target="_blank" rel="noopener"><i data-lucide="message-circle" class="w-4 h-4"></i> PESAN</a>
+</div>
+<div data-reveal class="border-technical p-5 flex flex-col">
+<div class="flex items-baseline justify-between gap-4 mb-2 flex-wrap">
+<h3 class="font-headline-md text-headline-md text-primary">HAZELNUT LATTE</h3>
+<span class="font-label-caps text-label-caps text-primary whitespace-nowrap border-technical px-2 py-1 bg-surface-variant">28K</span>
+</div>
+<p class="font-body-md text-body-md text-primary opacity-80 mb-4">Latte lembut dengan sirup hazelnut panggang.</p>
+<a class="mt-auto self-start px-4 py-3 border-technical font-label-caps text-label-caps tracking-widest text-primary btn-neo flex items-center gap-2" href="https://wa.me/6285247113766?text=Halo%20Socialitea%2C%20saya%20mau%20pesan%20*Hazelnut%20Latte*%20(28K)" target="_blank" rel="noopener"><i data-lucide="message-circle" class="w-4 h-4"></i> PESAN</a>
+</div>
+<div data-reveal class="border-technical p-5 flex flex-col">
+<div class="flex items-baseline justify-between gap-4 mb-2 flex-wrap">
+<h3 class="font-headline-md text-headline-md text-primary">VIETNAM DRIP</h3>
+<span class="font-label-caps text-label-caps text-primary whitespace-nowrap border-technical px-2 py-1 bg-surface-variant">20K</span>
+</div>
+<p class="font-body-md text-body-md text-primary opacity-80 mb-4">Kopi tubruk khas Vietnam, disaring tetes demi tetes. Kental dan pekat.</p>
+<a class="mt-auto self-start px-4 py-3 border-technical font-label-caps text-label-caps tracking-widest text-primary btn-neo flex items-center gap-2" href="https://wa.me/6285247113766?text=Halo%20Socialitea%2C%20saya%20mau%20pesan%20*Vietnam%20Drip*%20(20K)" target="_blank" rel="noopener"><i data-lucide="message-circle" class="w-4 h-4"></i> PESAN</a>
+</div>
+<div data-reveal class="border-technical p-5 flex flex-col">
+<div class="flex items-baseline justify-between gap-4 mb-2 flex-wrap">
+<h3 class="font-headline-md text-headline-md text-primary">V60</h3>
+<span class="font-label-caps text-label-caps text-primary whitespace-nowrap border-technical px-2 py-1 bg-surface-variant">25K</span>
+</div>
+<p class="font-body-md text-body-md text-primary opacity-80 mb-4">Manual brew single origin. Nikmati karakter asli biji kopi.</p>
+<a class="mt-auto self-start px-4 py-3 border-technical font-label-caps text-label-caps tracking-widest text-primary btn-neo flex items-center gap-2" href="https://wa.me/6285247113766?text=Halo%20Socialitea%2C%20saya%20mau%20pesan%20*V60*%20(25K)" target="_blank" rel="noopener"><i data-lucide="message-circle" class="w-4 h-4"></i> PESAN</a>
+</div>
+</div>
+</div>
+</section>
+<!-- ===== MATCHA ===== -->
+<section class="border-technical-b" data-category="matcha">
+<div data-reveal class="bg-primary text-on-primary px-4 sm:px-6 py-3 border-technical-b flex items-center justify-between">
+<h2 class="font-headline-md text-headline-md uppercase tracking-tight flex items-center gap-3"><i data-lucide="leaf" class="w-6 h-6"></i> MATCHA</h2>
+<i data-lucide="leaf" class="w-5 h-5"></i>
+</div>
+<div class="p-4 sm:p-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6" data-reveal-stagger>
+<div data-reveal class="border-technical p-5 flex flex-col">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">MATCHA LATTE</h3>
+<p class="font-body-md text-body-md text-primary opacity-80 mb-4">Matcha premium, creamy, dan tidak pahit.</p>
+<div class="mt-auto flex items-center justify-between gap-3 flex-wrap">
+<span class="font-headline-md text-headline-md text-primary">35K</span>
+<a class="px-4 py-3 border-technical font-label-caps text-label-caps tracking-widest text-primary btn-neo flex items-center gap-2" href="https://wa.me/6285247113766?text=Halo%20Socialitea%2C%20saya%20mau%20pesan%20*Matcha%20Latte*%20(35K)" target="_blank" rel="noopener"><i data-lucide="message-circle" class="w-4 h-4"></i> PESAN</a>
+</div>
+</div>
+<div data-reveal class="border-technical p-5 flex flex-col">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">MATCHA STRAWBERRY</h3>
+<p class="font-body-md text-body-md text-primary opacity-80 mb-4">Matcha dengan potongan strawberry segar.</p>
+<div class="mt-auto flex items-center justify-between gap-3 flex-wrap">
+<span class="font-headline-md text-headline-md text-primary">35K</span>
+<a class="px-4 py-3 border-technical font-label-caps text-label-caps tracking-widest text-primary btn-neo flex items-center gap-2" href="https://wa.me/6285247113766?text=Halo%20Socialitea%2C%20saya%20mau%20pesan%20*Matcha%20Strawberry*%20(35K)" target="_blank" rel="noopener"><i data-lucide="message-circle" class="w-4 h-4"></i> PESAN</a>
+</div>
+</div>
+<div data-reveal class="border-technical p-5 flex flex-col sm:col-span-2 lg:col-span-1">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">MATCHA CARAMEL</h3>
+<p class="font-body-md text-body-md text-primary opacity-80 mb-4">Matcha lembut berpadu karamel manis.</p>
+<div class="mt-auto flex items-center justify-between gap-3 flex-wrap">
+<span class="font-headline-md text-headline-md text-primary">38K</span>
+<a class="px-4 py-3 border-technical font-label-caps text-label-caps tracking-widest text-primary btn-neo flex items-center gap-2" href="https://wa.me/6285247113766?text=Halo%20Socialitea%2C%20saya%20mau%20pesan%20*Matcha%20Caramel*%20(38K)" target="_blank" rel="noopener"><i data-lucide="message-circle" class="w-4 h-4"></i> PESAN</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ===== TEA ===== -->
+<section class="border-technical-b" data-category="tea">
+<div data-reveal class="bg-primary text-on-primary px-4 sm:px-6 py-3 border-technical-b flex items-center justify-between">
+<h2 class="font-headline-md text-headline-md uppercase tracking-tight flex items-center gap-3"><i data-lucide="cup-soda" class="w-6 h-6"></i> TEH</h2>
+<i data-lucide="cup-soda" class="w-5 h-5"></i>
+</div>
+<div class="p-4 sm:p-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6" data-reveal-stagger>
+<div data-reveal class="border-technical p-5 flex flex-col">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">ORIGINAL TEA</h3>
+<p class="font-body-md text-body-md text-primary opacity-80 mb-4">Teh seduh klasik. Sederhana, segar, dan murah hati.</p>
+<div class="mt-auto flex items-center justify-between gap-3 flex-wrap">
+<span class="font-headline-md text-headline-md text-primary">10K</span>
+<a class="px-4 py-3 border-technical font-label-caps text-label-caps tracking-widest text-primary btn-neo flex items-center gap-2" href="https://wa.me/6285247113766?text=Halo%20Socialitea%2C%20saya%20mau%20pesan%20*Original%20Tea*%20(10K)" target="_blank" rel="noopener"><i data-lucide="message-circle" class="w-4 h-4"></i> PESAN</a>
+</div>
+</div>
+<div data-reveal class="border-technical p-5 flex flex-col">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">KAMPUL TEA</h3>
+<p class="font-body-md text-body-md text-primary opacity-80 mb-4">Teh khas daerah dengan sensasi segar yang otentik.</p>
+<div class="mt-auto flex items-center justify-between gap-3 flex-wrap">
+<span class="font-headline-md text-headline-md text-primary">15K</span>
+<a class="px-4 py-3 border-technical font-label-caps text-label-caps tracking-widest text-primary btn-neo flex items-center gap-2" href="https://wa.me/6285247113766?text=Halo%20Socialitea%2C%20saya%20mau%20pesan%20*Kampul%20Tea*%20(15K)" target="_blank" rel="noopener"><i data-lucide="message-circle" class="w-4 h-4"></i> PESAN</a>
+</div>
+</div>
+<div data-reveal class="border-technical p-5 flex flex-col">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">FRUIT &amp; FLORAL TEA</h3>
+<p class="font-body-md text-body-md text-primary opacity-80 mb-4">Pilihan rasa: Leci, Blackcurrant, Manggo, Jasmine, atau Lemon.</p>
+<div class="mt-auto flex items-center justify-between gap-3 flex-wrap">
+<span class="font-headline-md text-headline-md text-primary">15K</span>
+<a class="px-4 py-3 border-technical font-label-caps text-label-caps tracking-widest text-primary btn-neo flex items-center gap-2" href="https://wa.me/6285247113766?text=Halo%20Socialitea%2C%20saya%20mau%20pesan%20*Fruit%20Tea*%20(Leci%2FBlackcurrant%2FManggo%2FJasmine%2FLemon%2015K)" target="_blank" rel="noopener"><i data-lucide="message-circle" class="w-4 h-4"></i> PESAN</a>
+</div>
+</div>
+<div data-reveal class="border-technical p-5 flex flex-col">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">TEH SUSU KLASIK</h3>
+<p class="font-body-md text-body-md text-primary opacity-80 mb-4">Teh Tarik, Milk Tea, atau Milo Tea. Lembut dan manis.</p>
+<div class="mt-auto flex items-center justify-between gap-3 flex-wrap">
+<span class="font-headline-md text-headline-md text-primary">15K</span>
+<a class="px-4 py-3 border-technical font-label-caps text-label-caps tracking-widest text-primary btn-neo flex items-center gap-2" href="https://wa.me/6285247113766?text=Halo%20Socialitea%2C%20saya%20mau%20pesan%20*Teh%20Tarik%20%2F%20Milk%20Tea%20%2F%20Milo%20Tea*%20(15K)" target="_blank" rel="noopener"><i data-lucide="message-circle" class="w-4 h-4"></i> PESAN</a>
+</div>
+</div>
+<div data-reveal class="border-technical p-5 flex flex-col sm:col-span-2">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">THAI TEA</h3>
+<p class="font-body-md text-body-md text-primary opacity-80 mb-4">Thai tea otentik dengan susu kental manis. Pilihan: Original atau Green Thai Tea.</p>
+<div class="mt-auto flex items-center justify-between gap-3 flex-wrap">
+<span class="font-headline-md text-headline-md text-primary">20K</span>
+<a class="px-4 py-3 border-technical font-label-caps text-label-caps tracking-widest text-primary btn-neo flex items-center gap-2" href="https://wa.me/6285247113766?text=Halo%20Socialitea%2C%20saya%20mau%20pesan%20*Thai%20Tea*%20(Original%20%2F%20Green%2020K)" target="_blank" rel="noopener"><i data-lucide="message-circle" class="w-4 h-4"></i> PESAN</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ===== MILK & CHOCOLATE & MOCKTAIL ===== -->
+<section class="border-technical-b" data-category="milk">
+<div data-reveal class="bg-primary text-on-primary px-4 sm:px-6 py-3 border-technical-b flex items-center justify-between">
+<h2 class="font-headline-md text-headline-md uppercase tracking-tight flex items-center gap-3"><i data-lucide="milk" class="w-6 h-6"></i> SUSU, COKELAT &amp; MOCKTAIL</h2>
+<i data-lucide="glass-water" class="w-5 h-5"></i>
+</div>
+<div class="p-4 sm:p-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6" data-reveal-stagger>
+<div data-reveal class="border-technical p-5 flex flex-col">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">CREAMY MILK</h3>
+<p class="font-body-md text-body-md text-primary opacity-80 mb-4">Pilihan rasa: Taro, Red Velvet, atau Brown Sugar Milk.</p>
+<div class="mt-auto flex items-center justify-between gap-3 flex-wrap">
+<span class="font-headline-md text-headline-md text-primary">25K</span>
+<a class="px-4 py-3 border-technical font-label-caps text-label-caps tracking-widest text-primary btn-neo flex items-center gap-2" href="https://wa.me/6285247113766?text=Halo%20Socialitea%2C%20saya%20mau%20pesan%20*Creamy%20Milk*%20(Taro%2FRed%20Velvet%2FBrown%20Sugar%2025K)" target="_blank" rel="noopener"><i data-lucide="message-circle" class="w-4 h-4"></i> PESAN</a>
+</div>
+</div>
+<div data-reveal class="border-technical p-5 flex flex-col">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">ES COKLAT &amp; CHOCO BANANA</h3>
+<p class="font-body-md text-body-md text-primary opacity-80 mb-4">Cokelat pekat: es cokelat klasik atau paduan pisang.</p>
+<div class="mt-auto flex items-center justify-between gap-3 flex-wrap">
+<span class="font-headline-md text-headline-md text-primary">25K</span>
+<a class="px-4 py-3 border-technical font-label-caps text-label-caps tracking-widest text-primary btn-neo flex items-center gap-2" href="https://wa.me/6285247113766?text=Halo%20Socialitea%2C%20saya%20mau%20pesan%20*Es%20Coklat%20%2F%20Choco%20Banana*%20(25K)" target="_blank" rel="noopener"><i data-lucide="message-circle" class="w-4 h-4"></i> PESAN</a>
+</div>
+</div>
+<div data-reveal class="border-technical p-5 flex flex-col">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">CHOCO CARAMEL</h3>
+<p class="font-body-md text-body-md text-primary opacity-80 mb-4">Cokelat kental dengan karamel lembut.</p>
+<div class="mt-auto flex items-center justify-between gap-3 flex-wrap">
+<span class="font-headline-md text-headline-md text-primary">28K</span>
+<a class="px-4 py-3 border-technical font-label-caps text-label-caps tracking-widest text-primary btn-neo flex items-center gap-2" href="https://wa.me/6285247113766?text=Halo%20Socialitea%2C%20saya%20mau%20pesan%20*Choco%20Caramel*%20(28K)" target="_blank" rel="noopener"><i data-lucide="message-circle" class="w-4 h-4"></i> PESAN</a>
+</div>
+</div>
+<div data-reveal class="border-technical p-5 flex flex-col sm:col-span-2">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">MOCKTAIL SIGNA TURE</h3>
+<p class="font-body-md text-body-md text-primary opacity-80 mb-4">Segar tanpa alkohol. Pilihan: Blue Blood, Red Bliss, atau Cranberrycano.</p>
+<div class="mt-auto flex items-center justify-between gap-3 flex-wrap">
+<span class="font-headline-md text-headline-md text-primary">25K</span>
+<a class="px-4 py-3 border-technical font-label-caps text-label-caps tracking-widest text-primary btn-neo flex items-center gap-2" href="https://wa.me/6285247113766?text=Halo%20Socialitea%2C%20saya%20mau%20pesan%20*Mocktail*%20(Blue%20Blood%2FRed%20Bliss%2FCranberrycano%2025K)" target="_blank" rel="noopener"><i data-lucide="message-circle" class="w-4 h-4"></i> PESAN</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ===== FOOD & SNACKS ===== -->
+<section class="border-technical-b" data-category="food">
+<div data-reveal class="bg-primary text-on-primary px-4 sm:px-6 py-3 border-technical-b flex items-center justify-between">
+<h2 class="font-headline-md text-headline-md uppercase tracking-tight flex items-center gap-3"><i data-lucide="utensils" class="w-6 h-6"></i> MAKANAN &amp; SNACK</h2>
+<i data-lucide="utensils-crossed" class="w-5 h-5"></i>
+</div>
+<div class="p-4 sm:p-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6" data-reveal-stagger>
+<div data-reveal class="border-technical p-5 flex flex-col">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">INDOMIE GORENG / KUAH + TELUR</h3>
+<p class="font-body-md text-body-md text-primary opacity-80 mb-4">Mi favorit semua orang, ditambah telur. Pilih goreng atau kuah.</p>
+<div class="mt-auto flex items-center justify-between gap-3 flex-wrap">
+<span class="font-headline-md text-headline-md text-primary">20K</span>
+<a class="px-4 py-3 border-technical font-label-caps text-label-caps tracking-widest text-primary btn-neo flex items-center gap-2" href="https://wa.me/6285247113766?text=Halo%20Socialitea%2C%20saya%20mau%20pesan%20*Indomie%20Goreng%2FKuah%20%2B%20Telur*%20(20K)" target="_blank" rel="noopener"><i data-lucide="message-circle" class="w-4 h-4"></i> PESAN</a>
+</div>
+</div>
+<div data-reveal class="border-technical p-5 flex flex-col">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">NASI GORENG SOCIALITEA</h3>
+<p class="font-body-md text-body-md text-primary opacity-80 mb-4">Nasi goreng spesial racikan khas Socialitea.</p>
+<div class="mt-auto flex items-center justify-between gap-3 flex-wrap">
+<span class="font-headline-md text-headline-md text-primary">25K</span>
+<a class="px-4 py-3 border-technical font-label-caps text-label-caps tracking-widest text-primary btn-neo flex items-center gap-2" href="https://wa.me/6285247113766?text=Halo%20Socialitea%2C%20saya%20mau%20pesan%20*Nasi%20Goreng%20Socialitea*%20(25K)" target="_blank" rel="noopener"><i data-lucide="message-circle" class="w-4 h-4"></i> PESAN</a>
+</div>
+</div>
+<div data-reveal class="border-technical p-5 flex flex-col">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">NASI AYAM BAWANG PUTIH</h3>
+<p class="font-body-md text-body-md text-primary opacity-80 mb-4">Ayam goreng bawang putih dengan nasi hangat.</p>
+<div class="mt-auto flex items-center justify-between gap-3 flex-wrap">
+<span class="font-headline-md text-headline-md text-primary">25K</span>
+<a class="px-4 py-3 border-technical font-label-caps text-label-caps tracking-widest text-primary btn-neo flex items-center gap-2" href="https://wa.me/6285247113766?text=Halo%20Socialitea%2C%20saya%20mau%20pesan%20*Nasi%20Ayam%20Bawang%20Putih*%20(25K)" target="_blank" rel="noopener"><i data-lucide="message-circle" class="w-4 h-4"></i> PESAN</a>
+</div>
+</div>
+<div data-reveal class="border-technical p-5 flex flex-col">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">NASI AYAM GEPREK</h3>
+<p class="font-body-md text-body-md text-primary opacity-80 mb-4">Ayam geprek sambal pedas. Level pedas bisa diatur.</p>
+<div class="mt-auto flex items-center justify-between gap-3 flex-wrap">
+<span class="font-headline-md text-headline-md text-primary">25K</span>
+<a class="px-4 py-3 border-technical font-label-caps text-label-caps tracking-widest text-primary btn-neo flex items-center gap-2" href="https://wa.me/6285247113766?text=Halo%20Socialitea%2C%20saya%20mau%20pesan%20*Nasi%20Ayam%20Geprek*%20(25K)" target="_blank" rel="noopener"><i data-lucide="message-circle" class="w-4 h-4"></i> PESAN</a>
+</div>
+</div>
+<div data-reveal class="border-technical p-5 flex flex-col">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">CHICKEN KATSU</h3>
+<p class="font-body-md text-body-md text-primary opacity-80 mb-4">Chicken katsu renyah dengan saus spesial.</p>
+<div class="mt-auto flex items-center justify-between gap-3 flex-wrap">
+<span class="font-headline-md text-headline-md text-primary">25K</span>
+<a class="px-4 py-3 border-technical font-label-caps text-label-caps tracking-widest text-primary btn-neo flex items-center gap-2" href="https://wa.me/6285247113766?text=Halo%20Socialitea%2C%20saya%20mau%20pesan%20*Chicken%20Katsu*%20(25K)" target="_blank" rel="noopener"><i data-lucide="message-circle" class="w-4 h-4"></i> PESAN</a>
+</div>
+</div>
+<div data-reveal class="border-technical p-5 flex flex-col">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">NASI BEEF TERIYAKI</h3>
+<p class="font-body-md text-body-md text-primary opacity-80 mb-4">Sapi teriyaki manis-gurih ala Jepang.</p>
+<div class="mt-auto flex items-center justify-between gap-3 flex-wrap">
+<span class="font-headline-md text-headline-md text-primary">30K</span>
+<a class="px-4 py-3 border-technical font-label-caps text-label-caps tracking-widest text-primary btn-neo flex items-center gap-2" href="https://wa.me/6285247113766?text=Halo%20Socialitea%2C%20saya%20mau%20pesan%20*Nasi%20Beef%20Teriyaki*%20(30K)" target="_blank" rel="noopener"><i data-lucide="message-circle" class="w-4 h-4"></i> PESAN</a>
+</div>
+</div>
+<div data-reveal class="border-technical p-5 flex flex-col">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">NASI AYAM SAMBAL MATAH</h3>
+<p class="font-body-md text-body-md text-primary opacity-80 mb-4">Ayam dengan sambal matah khas Bali.</p>
+<div class="mt-auto flex items-center justify-between gap-3 flex-wrap">
+<span class="font-headline-md text-headline-md text-primary">30K</span>
+<a class="px-4 py-3 border-technical font-label-caps text-label-caps tracking-widest text-primary btn-neo flex items-center gap-2" href="https://wa.me/6285247113766?text=Halo%20Socialitea%2C%20saya%20mau%20pesan%20*Nasi%20Ayam%20Sambal%20Matah*%20(30K)" target="_blank" rel="noopener"><i data-lucide="message-circle" class="w-4 h-4"></i> PESAN</a>
+</div>
+</div>
+<div data-reveal class="border-technical p-5 flex flex-col">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">SATE TAICHAN</h3>
+<p class="font-body-md text-body-md text-primary opacity-80 mb-4">Sate ayam polos dengan sambal dan perasan jeruk limau.</p>
+<div class="mt-auto flex items-center justify-between gap-3 flex-wrap">
+<span class="font-headline-md text-headline-md text-primary">35K</span>
+<a class="px-4 py-3 border-technical font-label-caps text-label-caps tracking-widest text-primary btn-neo flex items-center gap-2" href="https://wa.me/6285247113766?text=Halo%20Socialitea%2C%20saya%20mau%20pesan%20*Sate%20Taichan*%20(35K)" target="_blank" rel="noopener"><i data-lucide="message-circle" class="w-4 h-4"></i> PESAN</a>
+</div>
+</div>
+<div data-reveal class="border-technical p-5 flex flex-col">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">SNACK RENYAH</h3>
+<p class="font-body-md text-body-md text-primary opacity-80 mb-4">Pilihan: French Fries, Cireng, atau Onion Rings.</p>
+<div class="mt-auto flex items-center justify-between gap-3 flex-wrap">
+<span class="font-headline-md text-headline-md text-primary">20K</span>
+<a class="px-4 py-3 border-technical font-label-caps text-label-caps tracking-widest text-primary btn-neo flex items-center gap-2" href="https://wa.me/6285247113766?text=Halo%20Socialitea%2C%20saya%20mau%20pesan%20*Snack%20(French%20Fries%2FCireng%2FOnion%20Rings)*%20(20K)" target="_blank" rel="noopener"><i data-lucide="message-circle" class="w-4 h-4"></i> PESAN</a>
+</div>
+</div>
+<div data-reveal class="border-technical p-5 flex flex-col">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">PISCOK LUMER / PISANG WIJEN</h3>
+<p class="font-body-md text-body-md text-primary opacity-80 mb-4">Piscok lumer cokelat atau pisang wijen manis.</p>
+<div class="mt-auto flex items-center justify-between gap-3 flex-wrap">
+<span class="font-headline-md text-headline-md text-primary">25K</span>
+<a class="px-4 py-3 border-technical font-label-caps text-label-caps tracking-widest text-primary btn-neo flex items-center gap-2" href="https://wa.me/6285247113766?text=Halo%20Socialitea%2C%20saya%20mau%20pesan%20*Piscok%20Lumer%2FPisang%20Wijen*%20(25K)" target="_blank" rel="noopener"><i data-lucide="message-circle" class="w-4 h-4"></i> PESAN</a>
+</div>
+</div>
+<div data-reveal class="border-technical p-5 flex flex-col sm:col-span-2">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">MIX PLATTER</h3>
+<p class="font-body-md text-body-md text-primary opacity-80 mb-4">Gabungan snack terbaik untuk berbagi bersama.</p>
+<div class="mt-auto flex items-center justify-between gap-3 flex-wrap">
+<span class="font-headline-md text-headline-md text-primary">50K</span>
+<a class="px-4 py-3 border-technical font-label-caps text-label-caps tracking-widest text-primary btn-neo flex items-center gap-2" href="https://wa.me/6285247113766?text=Halo%20Socialitea%2C%20saya%20mau%20pesan%20*Mix%20Platter*%20(50K)" target="_blank" rel="noopener"><i data-lucide="message-circle" class="w-4 h-4"></i> PESAN</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ===== ORDER BANNER ===== -->
+<section data-reveal class="border-technical-b grid grid-cols-1 md:grid-cols-2">
+<div class="p-4 sm:p-6 lg:p-8 border-technical-b md:border-technical-b-0 md:border-technical-r flex flex-col justify-center">
+<div class="font-label-caps text-label-caps text-outline mb-2 flex items-center gap-2"><i data-lucide="info" class="w-4 h-4"></i> CATATAN</div>
+<p class="font-body-lg text-body-lg text-primary">Tersedia susu alternatif (oat / almond) — tanyakan langsung ke barista kami.</p>
+<p class="font-body-md text-body-md text-primary opacity-80 mt-3">Pemesanan bisa dilakukan langsung di tempat, via WhatsApp, atau datang nongkrong.</p>
+</div>
+<div class="p-4 sm:p-6 lg:p-8 bg-primary text-on-primary flex items-center justify-center">
+<a class="font-headline-md text-headline-md uppercase tracking-tighter bg-surface-container-lowest text-primary px-8 py-5 border-technical btn-neo flex items-center gap-3" href="https://wa.me/6285247113766?text=Halo%20Socialitea%2C%20saya%20mau%20pesan" target="_blank" rel="noopener">
+<i data-lucide="message-circle" class="w-6 h-6"></i> PESAN SEKARANG
+</a>
+</div>
+</section>
+</main>
+<!-- ===== FOOTER ===== -->
+<footer class="w-full bg-surface-container-lowest border-technical-t mt-8 max-w-container-max mx-auto border-technical-l border-technical-r border-technical-b mb-8">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full px-4 sm:px-6 lg:px-8 py-10">
+<div data-reveal>
+<a class="font-label-caps text-label-caps font-black tracking-tighter text-primary flex items-center gap-2 mb-4" href="index.html"><i data-lucide="cup-soda" class="w-5 h-5"></i> SOCIALITEA</a>
+<p class="font-body-md text-body-md text-primary">Teh &amp; Kopi Spesialis di Tanjung, Kalimantan Selatan. Sejak 2024.</p>
+</div>
+<div data-reveal>
+<div class="font-label-caps text-label-caps text-outline mb-4">TAUTAN</div>
+<nav class="flex flex-col gap-3 font-body-md text-body-md text-primary">
+<a class="hover:underline underline-offset-4" href="index.html">Beranda</a>
+<a class="hover:underline underline-offset-4" href="menu.html">Menu</a>
+<a class="hover:underline underline-offset-4" href="about.html">Tentang</a>
+<a class="hover:underline underline-offset-4" href="location.html">Lokasi</a>
+</nav>
+</div>
+<div data-reveal>
+<div class="font-label-caps text-label-caps text-outline mb-4">HUBUNGI KAMI</div>
+<nav class="flex flex-col gap-3 font-body-md text-body-md text-primary">
+<a class="flex items-center gap-2 hover:underline underline-offset-4" href="https://wa.me/6285247113766" target="_blank" rel="noopener"><i data-lucide="phone" class="w-4 h-4"></i> 0852-4711-3766</a>
+<a class="flex items-center gap-2 hover:underline underline-offset-4" href="https://www.instagram.com/socialitea_id/" target="_blank" rel="noopener"><i data-lucide="instagram" class="w-4 h-4"></i> @socialitea_id</a>
+<a class="flex items-center gap-2 hover:underline underline-offset-4" href="https://www.google.com/maps/place/Socialitea/@-2.1737731,115.4125982,17z/data=!3m1!4b1!4m6!3m5!1s0x2dfab3195695662b:0x65e1e5167d5b050!8m2!3d-2.1737731!4d115.4151785!16s%2Fg%2F11wxyql9lw" target="_blank" rel="noopener"><i data-lucide="map-pin" class="w-4 h-4"></i> Jl. A. Yani, Mabu'un, Tanjung</a>
+</nav>
+</div>
+</div>
+<div class="border-technical-t px-4 sm:px-6 lg:px-8 py-4 font-label-caps text-label-caps text-outline">
+<span>© 2024 SOCIALITEA. SEMUA HAK DILINDUNGI.</span>
+</div>
+</footer>
+</body></html>

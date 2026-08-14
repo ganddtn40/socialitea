@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Lokasi &amp; jam buka Socialitea — Jalan A. Yani, Mabu'un, Tanjung, Kalimantan Selatan. Buka Senin–Sabtu, pesan via WhatsApp 0852-4711-3766." name="description"/>
+<title>Lokasi &amp; Jam Buka — Socialitea | Tanjung</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<link href="favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="assets/css/site.css" rel="stylesheet"/>
+<script src="assets/js/site.js" defer></script>
+<noscript><style>[data-reveal]{opacity:1;transform:none}</style></noscript>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary": "#0001bb",
+                      "on-primary": "#ffffff",
+                      "outline": "#757589",
+                      "on-background": "#00006e",
+                      "surface-variant": "#e0e0ff",
+                      "on-surface": "#00006e",
+                      "surface-container-high": "#e7e6ff",
+                      "on-surface-variant": "#454558",
+                      "surface": "#fbf8ff",
+                      "background": "#fbf8ff",
+                      "surface-container": "#eeecff",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-low": "#f5f2ff",
+                      "surface-container-highest": "#e0e0ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0px",
+                      "lg": "0px",
+                      "xl": "0px",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "border-width": "2px",
+                      "unit": "4px",
+                      "gutter": "0px",
+                      "margin-page": "24px",
+                      "container-max": "1440px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": ["Playfair Display"],
+                      "body-lg": ["Space Mono"],
+                      "headline-lg": ["Playfair Display"],
+                      "label-caps": ["Space Mono"],
+                      "headline-md": ["Playfair Display"],
+                      "body-md": ["Space Mono"],
+                      "display-xl": ["Playfair Display"]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": ["clamp(1.75rem, 5vw + 0.5rem, 2.5rem)", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-lg": ["clamp(2rem, 4vw + 0.75rem, 4rem)", {"lineHeight": "1.05", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                      "headline-md": ["clamp(1.5rem, 2.5vw + 0.75rem, 2rem)", {"lineHeight": "1.1", "fontWeight": "700"}],
+                      "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "display-xl": ["clamp(3rem, 8vw + 0.5rem, 7.5rem)", {"lineHeight": "0.95", "letterSpacing": "-0.04em", "fontWeight": "900"}]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="min-h-screen flex flex-col font-body-md text-body-md antialiased selection:bg-primary selection:text-surface-container-lowest">
+<!-- ===== NAVBAR ===== -->
+<nav class="nav w-full sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-4 sm:px-6 lg:px-8 h-16 max-w-container-max mx-auto">
+<a class="nav-link font-label-caps text-label-caps font-black tracking-tighter text-primary flex items-center gap-2" href="index.html">
+<i data-lucide="cup-soda" class="w-5 h-5"></i> SOCIALITEA
+</a>
+<div class="hidden md:flex h-full">
+<a class="nav-link h-full flex items-center px-4 font-label-caps text-label-caps tracking-widest text-primary" href="index.html">BERANDA</a>
+<a class="nav-link h-full flex items-center px-4 font-label-caps text-label-caps tracking-widest text-primary" href="menu.html">MENU</a>
+<a class="nav-link h-full flex items-center px-4 font-label-caps text-label-caps tracking-widest text-primary" href="about.html">TENTANG</a>
+<a class="h-full flex items-center px-4 font-label-caps text-label-caps tracking-widest bg-primary text-surface-container-lowest" href="location.html">LOKASI</a>
+</div>
+<div class="flex items-center gap-2">
+<a class="hidden md:flex h-11 px-4 items-center border-technical bg-surface-container-lowest text-primary font-label-caps text-label-caps tracking-widest btn-neo gap-2" href="https://wa.me/6285247113766?text=Halo%20Socialitea,%20saya%20ingin%20tanya%20mengenai%20lokasi/menu" target="_blank" rel="noopener">
+<i data-lucide="message-circle" class="w-4 h-4"></i> PESAN SEKARANG
+</a>
+<button id="mobile-menu-toggle" class="md:hidden flex items-center justify-center w-12 h-12 border-technical text-primary" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="mobile-menu">
+<span class="hamburger"><span></span><span></span><span></span></span>
+</button>
+</div>
+</div>
+<div id="mobile-menu" class="mobile-panel md:hidden border-technical-t border-technical-b bg-surface-container-lowest">
+<a class="block px-4 sm:px-6 py-4 font-label-caps text-label-caps tracking-widest text-primary" href="index.html">BERANDA</a>
+<a class="block px-4 sm:px-6 py-4 font-label-caps text-label-caps tracking-widest text-primary" href="menu.html">MENU</a>
+<a class="block px-4 sm:px-6 py-4 font-label-caps text-label-caps tracking-widest text-primary" href="about.html">TENTANG</a>
+<a class="block px-4 sm:px-6 py-4 font-label-caps text-label-caps tracking-widest bg-primary text-on-primary" href="location.html">LOKASI</a>
+<a class="block px-4 sm:px-6 py-4 font-label-caps text-label-caps tracking-widest bg-primary text-on-primary" href="https://wa.me/6285247113766?text=Halo%20Socialitea,%20saya%20ingin%20tanya%20mengenai%20lokasi/menu" target="_blank" rel="noopener">PESAN VIA WHATSAPP</a>
+</div>
+</nav>
+<!-- ===== MAIN ===== -->
+<main class="flex-grow w-full max-w-container-max mx-auto border-technical-l border-technical-r">
+<!-- Hero -->
+<section class="grid grid-cols-1 md:grid-cols-12 border-technical-b">
+<div data-reveal class="col-span-1 md:col-span-8 p-4 sm:p-6 lg:p-10 flex flex-col justify-end border-technical-b md:border-technical-b-0 md:border-technical-r min-h-[300px] md:min-h-[320px] bg-surface-container-low">
+<div class="flex items-center gap-2 font-label-caps text-label-caps tracking-widest text-primary bg-surface-variant px-3 py-1 border-technical w-fit mb-6">
+<i data-lucide="map-pin" class="w-4 h-4"></i> MABU'UN — TANJUNG
+</div>
+<h1 class="font-display-xl text-display-xl text-primary m-0 leading-none">LOKASI &amp;<br/>JAM BUKA</h1>
+<p class="font-body-lg text-body-lg text-primary mt-6 max-w-lg">&gt; MUDAH DITEMUKAN, DI TENGAH KOTA TANJUNG. LANGSUNG DI SEBERANG SPBU MABUUN.</p>
+</div>
+<div data-reveal data-reveal-delay="120" class="col-span-1 md:col-span-4 p-4 sm:p-6 lg:p-10 flex flex-col justify-between bg-surface-container-lowest">
+<div class="mb-8">
+<div class="font-label-caps text-label-caps text-outline mb-2">[ STATUS ]</div>
+<p class="font-body-md text-body-md text-primary bg-surface-variant inline-block px-2 py-1 border-technical">BUKA &middot; SIAP MELAYANI</p>
+</div>
+<div>
+<div class="font-label-caps text-label-caps text-outline mb-2">[ LOKASI ]</div>
+<p class="font-headline-md text-headline-md text-primary">TANJUNG<br/>KAL-SEL 71571</p>
+</div>
+</div>
+</section>
+<!-- Info + Map -->
+<section class="grid grid-cols-1 md:grid-cols-12 border-technical-b">
+<!-- Left: Address & Hours -->
+<div data-reveal class="col-span-1 md:col-span-5 border-technical-b md:border-technical-b-0 md:border-technical-r flex flex-col">
+<div class="p-4 sm:p-6 lg:p-8 border-technical-b bg-surface-container-lowest">
+<h3 class="font-label-caps text-label-caps text-primary mb-5 flex items-center gap-2">
+<i data-lucide="map-pin" class="w-4 h-4"></i> ALAMAT
+</h3>
+<address class="not-italic font-body-lg text-body-lg text-primary space-y-2">
+<p>Jalan A. Yani (Seberang SPBU Mabuun)</p>
+<p>Samping Queen Store Tanjung</p>
+<p>Mabu'un, Kec. Murung Pudak</p>
+<p>Kalimantan Selatan 71571</p>
+</address>
+</div>
+<div class="p-4 sm:p-6 lg:p-8 border-technical-b bg-surface-container-lowest">
+<h3 class="font-label-caps text-label-caps text-primary mb-5 flex items-center gap-2">
+<i data-lucide="clock" class="w-4 h-4"></i> JAM BUKA
+</h3>
+<ul class="font-body-md text-body-md text-primary">
+<li class="flex justify-between py-3 border-technical-b gap-4 flex-wrap">
+<span>SENIN – JUMAT</span>
+<span>07.00 – 20.00 WITA</span>
+</li>
+<li class="flex justify-between py-3 border-technical-b gap-4 flex-wrap">
+<span>SABTU</span>
+<span>09.00 – 22.00 WITA</span>
+</li>
+<li class="flex justify-between py-3 gap-4 flex-wrap">
+<span class="text-outline">MINGGU</span>
+<span class="text-outline">TUTUP</span>
+</li>
+</ul>
+</div>
+<div class="p-4 sm:p-6 lg:p-8 bg-surface-container-lowest border-technical-t mt-auto">
+<div class="font-label-caps text-label-caps text-outline mb-4">HUBUNGI KAMI</div>
+<div class="flex flex-col gap-3">
+<a class="px-5 py-3 border-technical bg-primary text-on-primary font-label-caps text-label-caps tracking-widest btn-neo flex items-center justify-center gap-2" href="https://wa.me/6285247113766" target="_blank" rel="noopener">
+<i data-lucide="phone" class="w-4 h-4"></i> 0852-4711-3766
+</a>
+<a class="px-5 py-3 border-technical bg-surface-container-lowest text-primary font-label-caps text-label-caps tracking-widest btn-neo flex items-center justify-center gap-2" href="https://www.instagram.com/socialitea_id/" target="_blank" rel="noopener">
+<i data-lucide="instagram" class="w-4 h-4"></i> @SOCIALITEA_ID
+</a>
+</div>
+</div>
+</div>
+<!-- Right: Google Maps Embed -->
+<div data-reveal data-reveal-delay="120" class="col-span-1 md:col-span-7 bg-surface-container-lowest relative overflow-hidden min-h-[420px] md:min-h-[560px] flex flex-col">
+<iframe class="w-full h-full min-h-[380px] md:min-h-[480px] flex-grow" title="Peta lokasi Socialitea di Google Maps" src="https://maps.google.com/maps?q=-2.1737731,115.4151785&amp;z=17&amp;hl=id&amp;output=embed" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<div class="absolute bottom-4 right-4 bg-surface-container-lowest border-technical p-3 shadow-neo max-w-xs hidden sm:block">
+<p class="font-label-caps text-label-caps text-primary">&gt; SOCIALITEA — MABU'UN</p>
+<p class="font-body-md text-body-md text-outline mt-1 text-xs">Seberang SPBU Mabuun, samping Queen Store Tanjung.</p>
+</div>
+</div>
+</section>
+<!-- Action Row -->
+<section class="grid grid-cols-1 md:grid-cols-2 border-technical-b" data-reveal-stagger>
+<a data-reveal class="p-6 sm:p-8 border-technical-b md:border-technical-b-0 md:border-technical-r flex items-center justify-center gap-3 bg-primary text-on-primary font-headline-md text-headline-md uppercase tracking-tighter btn-neo text-center" href="https://www.google.com/maps/place/Socialitea/@-2.1737731,115.4125982,17z/data=!3m1!4b1!4m6!3m5!1s0x2dfab3195695662b:0x65e1e5167d5b050!8m2!3d-2.1737731!4d115.4151785!16s%2Fg%2F11wxyql9lw" target="_blank" rel="noopener">
+<i data-lucide="navigation" class="w-6 h-6"></i> BUKA DI GOOGLE MAPS
+</a>
+<a data-reveal class="p-6 sm:p-8 flex items-center justify-center gap-3 bg-surface-container-lowest text-primary font-headline-md text-headline-md uppercase tracking-tighter btn-neo text-center" href="https://wa.me/6285247113766?text=Halo%20Socialitea%2C%20saya%20mau%20reservasi%2Forder" target="_blank" rel="noopener">
+<i data-lucide="message-circle" class="w-6 h-6"></i> RESERVASI / ORDER
+</a>
+</section>
+</main>
+<!-- ===== FOOTER ===== -->
+<footer class="w-full bg-surface-container-lowest border-technical-t mt-8 max-w-container-max mx-auto border-technical-l border-technical-r border-technical-b mb-8">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full px-4 sm:px-6 lg:px-8 py-10">
+<div data-reveal>
+<a class="font-label-caps text-label-caps font-black tracking-tighter text-primary flex items-center gap-2 mb-4" href="index.html"><i data-lucide="cup-soda" class="w-5 h-5"></i> SOCIALITEA</a>
+<p class="font-body-md text-body-md text-primary">Teh &amp; Kopi Spesialis di Tanjung, Kalimantan Selatan. Sejak 2024.</p>
+</div>
+<div data-reveal>
+<div class="font-label-caps text-label-caps text-outline mb-4">TAUTAN</div>
+<nav class="flex flex-col gap-3 font-body-md text-body-md text-primary">
+<a class="hover:underline underline-offset-4" href="index.html">Beranda</a>
+<a class="hover:underline underline-offset-4" href="menu.html">Menu</a>
+<a class="hover:underline underline-offset-4" href="about.html">Tentang</a>
+<a class="hover:underline underline-offset-4" href="location.html">Lokasi</a>
+</nav>
+</div>
+<div data-reveal>
+<div class="font-label-caps text-label-caps text-outline mb-4">HUBUNGI KAMI</div>
+<nav class="flex flex-col gap-3 font-body-md text-body-md text-primary">
+<a class="flex items-center gap-2 hover:underline underline-offset-4" href="https://wa.me/6285247113766" target="_blank" rel="noopener"><i data-lucide="phone" class="w-4 h-4"></i> 0852-4711-3766</a>
+<a class="flex items-center gap-2 hover:underline underline-offset-4" href="https://www.instagram.com/socialitea_id/" target="_blank" rel="noopener"><i data-lucide="instagram" class="w-4 h-4"></i> @socialitea_id</a>
+<a class="flex items-center gap-2 hover:underline underline-offset-4" href="https://www.google.com/maps/place/Socialitea/@-2.1737731,115.4125982,17z/data=!3m1!4b1!4m6!3m5!1s0x2dfab3195695662b:0x65e1e5167d5b050!8m2!3d-2.1737731!4d115.4151785!16s%2Fg%2F11wxyql9lw" target="_blank" rel="noopener"><i data-lucide="map-pin" class="w-4 h-4"></i> Jl. A. Yani, Mabu'un, Tanjung</a>
+</nav>
+</div>
+</div>
+<div class="border-technical-t px-4 sm:px-6 lg:px-8 py-4 font-label-caps text-label-caps text-outline">
+<span>© 2024 SOCIALITEA. SEMUA HAK DILINDUNGI.</span>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,150 @@
+/* ============================================================
+   SOCIALITEA — SHARED STYLES
+   Motion policy: animate transform & opacity only (GPU-safe).
+   ============================================================ */
+
+html { scroll-behavior: smooth; }
+html, body { overflow-x: clip; }
+:root { color-scheme: light; }
+
+body {
+  background-color: #ffffff;
+  color: #0001bb;
+  font-family: 'Space Mono', monospace;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- structural utilities ---------- */
+.border-technical { border: 2px solid #0001bb; }
+.border-technical-b { border-bottom: 2px solid #0001bb; }
+.border-technical-r { border-right: 2px solid #0001bb; }
+.border-technical-l { border-left: 2px solid #0001bb; }
+.border-technical-t { border-top: 2px solid #0001bb; }
+
+.bg-dither {
+  background-image: radial-gradient(#0001bb 1px, transparent 1px);
+  background-size: 4px 4px;
+}
+
+.halftone-image {
+  filter: grayscale(100%) contrast(1.25) sepia(100%) hue-rotate(200deg) saturate(200%) brightness(0.9);
+  mix-blend-mode: luminosity;
+}
+
+/* ---------- buttons & touch targets (min 44px) ---------- */
+.btn-neo {
+  min-height: 44px;
+  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.2s ease, color 0.2s ease;
+}
+.btn-neo:hover { background-color: #0001bb; color: #ffffff; transform: scale(1.02); }
+.btn-neo:active { transform: scale(0.98); }
+
+.chip {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.2s ease, color 0.2s ease;
+}
+.chip:hover { transform: scale(1.02); }
+.chip:active { transform: scale(0.98); }
+.chip.active { background-color: #0001bb; color: #ffffff; }
+
+.shadow-neo { box-shadow: 4px 4px 0 #0001bb; transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1); }
+.shadow-neo:hover { box-shadow: none; transform: scale(1.02); }
+
+/* ---------- navbar ---------- */
+.nav {
+  border-bottom: 2px solid transparent;
+  background-color: rgba(255, 255, 255, 0);
+  transition: background-color 0.35s ease, border-color 0.35s ease, backdrop-filter 0.35s ease;
+  animation: navDrop 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes navDrop {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.nav-scrolled {
+  background-color: rgba(255, 255, 255, 0.85);
+  -webkit-backdrop-filter: blur(14px) saturate(1.2);
+  backdrop-filter: blur(14px) saturate(1.2);
+  border-bottom-color: #0001bb;
+}
+
+.nav-link { position: relative; }
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 8px;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.nav-link:hover { opacity: 0.75; }
+.nav-link:hover::after { transform: scaleX(1); }
+
+/* ---------- hamburger (animated icon state) ---------- */
+.hamburger {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+.hamburger span {
+  position: absolute;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background: #0001bb;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.25s ease;
+}
+.hamburger span:nth-child(1) { top: 6px; }
+.hamburger span:nth-child(2) { top: 12px; }
+.hamburger span:nth-child(3) { top: 18px; }
+.hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+/* ---------- mobile dropdown panel (slide + fade, zero layout footprint when closed) ---------- */
+.mobile-panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.3s;
+}
+.mobile-panel.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* ---------- scroll reveal (once, transform + opacity only) ---------- */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+[data-reveal].visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .nav { animation: none; }
+  [data-reveal] { opacity: 1; transform: none; transition: none; }
+  .btn-neo, .chip, .shadow-neo, .nav-link::after, .hamburger span, .mobile-panel { transition: none; }
+  .btn-neo:hover, .chip:hover, .shadow-neo:hover { transform: none; }
+}

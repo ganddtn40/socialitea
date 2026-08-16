@@ -23,54 +23,49 @@ execSync("npx esbuild assets/js/site.js --minify --outfile=.build/site.js", {
   stdio: "inherit",
 });
 
-const tailwindCss = readFileSync(join(TMP, "tailwind.css"), "utf8");
-const siteCss = readFileSync(join(ROOT, "assets", "css", "site.css"), "utf8");
-const siteJs = readFileSync(join(TMP, "site.js"), "utf8");
-
-const PAGES = ["index.html", "menu.html", "about.html", "location.html", "privacy.html", "tos.html"];
-
-async function fetchFontPreloads() {
+async function fetchFonts() {
   try {
     const FONTS_CSS = "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap";
     const css = await (await fetch(FONTS_CSS, {
       headers: { "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" },
     })).text();
     const blocks = [...css.matchAll(/@font-face\s*{([^}]+)}/g)].map((m) => m[1]);
-    const links = blocks
+    const preloads = blocks
       .filter((b) => /unicode-range:\s*U\+0000-00FF/.test(b))
       .map((b) => b.match(/url\((https:\/\/[^)]+\.woff2)\)/)?.[1])
       .filter(Boolean)
       .map((u) => `<link crossorigin="" href="${u}" rel="preload" as="font"/>`);
-    return links;
+    return { css, preloads };
   } catch (e) {
-    console.warn("font preload fetch failed:", e.message);
-    return [];
+    console.warn("font fetch failed, keeping remote stylesheet:", e.message);
+    return { css: null, preloads: [] };
   }
 }
 
+const { css: fontCss, preloads: fontPreloads } = await fetchFonts();
+const FONTS_SHEET = '<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet"/>';
+
+const tailwindCss = readFileSync(join(TMP, "tailwind.css"), "utf8");
+const siteCss = readFileSync(join(ROOT, "assets", "css", "site.css"), "utf8");
+const siteJs = readFileSync(join(TMP, "site.js"), "utf8");
+
+const PAGES = ["index.html", "menu.html", "about.html", "location.html", "privacy.html", "tos.html"];
 for (const page of PAGES) {
-  console.log("3/4 inline css + js ->", page);
+  console.log("3/4 inline css + js + fonts ->", page);
   let html = readFileSync(join(ROOT, page), "utf8");
   const twLink = '<link href="assets/css/tailwind.css" rel="stylesheet"/>';
   const siteLink = '<link href="assets/css/site.css" rel="stylesheet"/>';
   if (!html.includes(twLink) || !html.includes(siteLink)) {
     throw new Error(page + ": expected css link tags not found");
   }
+  if (fontCss) {
+    if (!html.includes(FONTS_SHEET)) throw new Error(page + ": fonts sheet link not found");
+    const fontsInline = fontPreloads.join("\n") + "\n" + "<style>" + fontCss + "</style>";
+    html = html.replace(FONTS_SHEET, fontsInline, 1);
+  }
   html = html.replace(twLink, "<style>" + tailwindCss + "</style>", 1);
   html = html.replace(siteLink, "<style>" + siteCss + "</style>", 1);
   writeFileSync(join(DIST, page), html, "utf8");
-}
-
-console.log("3b/4 font preloads...");
-const fontLinks = await fetchFontPreloads();
-for (const page of PAGES) {
-  const path = join(DIST, page);
-  let html = readFileSync(path, "utf8");
-  if (!fontLinks.some((l) => html.includes(l))) {
-    const anchor = '<link href="https://fonts.googleapis.com" rel="preconnect"/>';
-    html = html.replace(anchor, fontLinks.join("\n") + "\n" + anchor, 1);
-    writeFileSync(path, html, "utf8");
-  }
 }
 
 console.log("4/4 copy assets & root files...");

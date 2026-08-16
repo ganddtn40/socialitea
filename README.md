@@ -15,12 +15,20 @@ Static landing site for **Socialitea**, a tea & coffee specialist cafe in Tanjun
 
 ## Tech
 
-- Plain HTML + CSS + JS, no build step
-- [Tailwind CSS CDN](https://cdn.tailwindcss.com) with an inline `tailwind.config` (brutalist design tokens: Playfair Display + Space Mono, radius 0, offset shadows, `#0001bb` primary)
-- [Google Fonts](https://fonts.google.com) (Playfair Display, Space Mono)
+- Plain HTML + CSS + JS, no runtime framework
+- [Tailwind CSS](https://tailwindcss.com) compiled to a static, minified `assets/css/tailwind.css` (see `tailwind.config.js`, content-scanned from `./*.html`); no CDN script at runtime
+- [Google Fonts](https://fonts.google.com) (Playfair Display, Space Mono) with `display=swap` + preconnect
 - Custom line-art SVG icon sprite: `assets/icons.svg`, referenced via `<use href="assets/icons.svg#...">`
 - Shared styles/scripts: `assets/css/site.css`, `assets/js/site.js` (nav scroll state, mobile menu, scroll reveal, menu filter, image loading skeletons)
-- Favicon: `favicon.ico`
+- Local WebP images in `assets/img/`; favicon, apple-touch-icon, and PWA icons included
+- SEO: per-page canonical/OG/Twitter metadata, JSON-LD (`CafeOrCoffeeShop`), `robots.txt`, `sitemap.xml`
+
+## Build
+
+```sh
+npm install
+npm run build   # tailwindcss -> assets/css/tailwind.css (minified)
+```
 
 ## Run locally
 

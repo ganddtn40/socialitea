@@ -4,6 +4,7 @@ node_modules/
 # Build outputs
 .next/
 dist/
+.build/
 build/
 out/
 
@@ -32,3 +33,6 @@ Thumbs.db
 # Misc caches
 .cache/
 .temp/
+
+.vercel
+.env*

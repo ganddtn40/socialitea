@@ -10,10 +10,17 @@
     return Array.prototype.slice.call((ctx || document).querySelectorAll(sel));
   }
 
-  /* ---------- Lucide icons ---------- */
-  if (window.lucide && lucide.createIcons) {
-    lucide.createIcons();
-  }
+  /* ---------- Image / iframe loading skeletons ---------- */
+  $all('.img-frame').forEach(function (frame) {
+    var el = frame.querySelector('img, iframe');
+    if (!el) { frame.classList.add('loaded'); return; }
+    var done = function () { frame.classList.add('loaded'); };
+    if (el.complete && el.naturalWidth !== 0) { done(); }
+    else {
+      el.addEventListener('load', done);
+      el.addEventListener('error', done);
+    }
+  });
 
   /* ---------- Navbar scroll state (blur + border) ---------- */
   var nav = document.querySelector('.nav');

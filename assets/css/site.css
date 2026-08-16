@@ -8,7 +8,7 @@ html, body { overflow-x: clip; }
 :root { color-scheme: light; }
 
 body {
-  background-color: #ffffff;
+  background-color: #fbf8ff;
   color: #0001bb;
   font-family: 'Space Mono', monospace;
   line-height: 1.5;
@@ -22,9 +22,9 @@ body {
 .border-technical-l { border-left: 2px solid #0001bb; }
 .border-technical-t { border-top: 2px solid #0001bb; }
 
-.bg-dither {
-  background-image: radial-gradient(#0001bb 1px, transparent 1px);
-  background-size: 4px 4px;
+/* Editorial hairline texture (replaces dot grid) */
+.bg-lines {
+  background-image: repeating-linear-gradient(135deg, rgba(0, 1, 187, 0.07) 0 2px, transparent 2px 14px);
 }
 
 .halftone-image {
@@ -51,8 +51,35 @@ body {
 .chip:active { transform: scale(0.98); }
 .chip.active { background-color: #0001bb; color: #ffffff; }
 
-.shadow-neo { box-shadow: 4px 4px 0 #0001bb; transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1); }
-.shadow-neo:hover { box-shadow: none; transform: scale(1.02); }
+.shadow-neo { box-shadow: 4px 4px 0 #0001bb; transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1); }
+.shadow-neo:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 #0001bb; }
+
+/* ---------- image / iframe loading skeleton (shimmer on flat blue-grey) ---------- */
+.img-frame {
+  position: relative;
+  overflow: hidden;
+  background-color: #e7e6ff;
+}
+.img-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, transparent 30%, rgba(255, 255, 255, 0.6) 50%, transparent 70%);
+  background-size: 220% 100%;
+  animation: shimmer 1.3s ease-in-out infinite;
+}
+@keyframes shimmer {
+  from { background-position: 130% 0; }
+  to   { background-position: -90% 0; }
+}
+.img-frame img,
+.img-frame iframe {
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+.img-frame.loaded::after { display: none; }
+.img-frame.loaded img,
+.img-frame.loaded iframe { opacity: 1; }
 
 /* ---------- navbar ---------- */
 .nav {
@@ -147,4 +174,5 @@ body {
   [data-reveal] { opacity: 1; transform: none; transition: none; }
   .btn-neo, .chip, .shadow-neo, .nav-link::after, .hamburger span, .mobile-panel { transition: none; }
   .btn-neo:hover, .chip:hover, .shadow-neo:hover { transform: none; }
+  .img-frame::after { display: none; }
 }

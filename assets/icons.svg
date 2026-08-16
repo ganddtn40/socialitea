@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <!-- Custom Socialitea line-art set. Stroke = 2px, square caps, brutalist editorial. -->
+  <symbol id="cup" viewBox="0 0 24 24">
+    <path d="M5.5 9H15.7V13.2C15.7 16.7 13.4 18.6 10.6 18.6C7.8 18.6 5.5 16.7 5.5 13.2Z"/>
+    <path d="M15.7 10.4H17.2C18.9 10.4 19.6 12 19.6 13.4C19.6 14.9 18.9 16.4 17.2 16.4H15.7"/>
+    <path d="M4 19.4H17.2"/>
+    <path d="M8.5 4.2V6M11.5 3.4V5.4"/>
+  </symbol>
+  <symbol id="chat" viewBox="0 0 24 24">
+    <path d="M4 4.5H20V16.5H13L9 20V16.5H4Z"/>
+    <path d="M8 9H16M8 12H13"/>
+  </symbol>
+  <symbol id="instagram" viewBox="0 0 24 24">
+    <rect x="3.5" y="3.5" width="17" height="17"/>
+    <circle cx="12" cy="12" r="4.2"/>
+    <circle cx="17" cy="7" r="1.3" fill="currentColor" stroke="none"/>
+  </symbol>
+  <symbol id="pin" viewBox="0 0 24 24">
+    <path d="M12 21.2C12 21.2 4.8 14.6 4.8 9.8C4.8 5.9 8 2.8 12 2.8C16 2.8 19.2 5.9 19.2 9.8C19.2 14.6 12 21.2 12 21.2Z"/>
+    <circle cx="12" cy="9.8" r="2.6"/>
+  </symbol>
+  <symbol id="clock" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="8.6"/>
+    <path d="M12 7.6V12L15.4 14.2"/>
+  </symbol>
+  <symbol id="phone" viewBox="0 0 24 24">
+    <path d="M7 3.8H9.4L11 7.4L9.1 8.9C10.1 11.1 13.3 14.3 15.5 15.3L17 13.4L20.6 15V17.4C20.6 18.6 19.6 19.6 18.4 19.5C10.9 18.9 5.5 13.5 4.9 6C4.8 4.8 5.8 3.8 7 3.8Z"/>
+  </symbol>
+  <symbol id="compass" viewBox="0 0 24 24">
+    <path d="M12 2.8L21.2 12L12 21.2L2.8 12Z"/>
+    <path d="M12 8.6L15.4 12L12 15.4L8.6 12Z"/>
+    <circle cx="12" cy="12" r="1.1" fill="currentColor" stroke="none"/>
+  </symbol>
+  <symbol id="leaf" viewBox="0 0 24 24">
+    <path d="M4.8 19.2C4.8 11.4 11.4 4.8 19.2 4.8C19.2 12.6 12.6 19.2 4.8 19.2Z"/>
+    <path d="M5.8 18.2L14.6 9.4"/>
+  </symbol>
+  <symbol id="milk" viewBox="0 0 24 24">
+    <path d="M8.4 3.4H15.6V6.6L18.2 10.2V20.6H5.8V10.2L8.4 6.6Z"/>
+    <path d="M8.4 3.4V6.6H15.6V3.4"/>
+    <path d="M10.8 3.4V1.8H13.2V3.4"/>
+  </symbol>
+  <symbol id="food" viewBox="0 0 24 24">
+    <path d="M6.2 3.4V9.4M8.2 3.4V9.4M10.2 3.4V9.4"/>
+    <path d="M7.2 9.4V20.4H9.2V9.4"/>
+    <path d="M15.8 3.4V13C15.8 15.8 17.4 17 17.4 21.6H19.8C19.8 10 17.8 6.4 15.8 3.4Z"/>
+  </symbol>
+  <symbol id="arrow" viewBox="0 0 24 24">
+    <path d="M4 12H19M13.2 6.4L18.8 12L13.2 17.6"/>
+  </symbol>
+  <symbol id="heart" viewBox="0 0 24 24">
+    <path d="M12 20.2C12 20.2 4.6 15 4.6 9.9C4.6 7.4 6.5 5.4 9 5.4C10.2 5.4 11.3 6 12 7C12.7 6 13.8 5.4 15 5.4C17.5 5.4 19.4 7.4 19.4 9.9C19.4 15 12 20.2 12 20.2Z"/>
+  </symbol>
+</svg>

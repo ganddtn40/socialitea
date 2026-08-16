@@ -73,7 +73,7 @@ console.log("4/4 copy assets & root files...");
 cpSync(join(ROOT, "assets"), join(DIST, "assets"), { recursive: true });
 writeFileSync(join(DIST, "assets", "js", "site.js"), siteJs, "utf8");
 rmSync(join(DIST, "assets", "css"), { recursive: true, force: true });
-for (const f of ["favicon.ico", "apple-touch-icon.png", "robots.txt", "sitemap.xml", "site.webmanifest"]) {
+for (const f of ["favicon.ico", "apple-touch-icon.png", "robots.txt", "sitemap.xml", "site.webmanifest", "googleda1a9536d51b2b51.html"]) {
   cpSync(join(ROOT, f), join(DIST, f));
 }
 

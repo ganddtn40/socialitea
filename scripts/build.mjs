@@ -32,9 +32,10 @@ async function fetchFonts() {
     const blocks = [...css.matchAll(/@font-face\s*{([^}]+)}/g)].map((m) => m[1]);
     const preloads = blocks
       .filter((b) => /unicode-range:\s*U\+0000-00FF/.test(b))
+      .filter((b) => !/font-style:\s*italic/.test(b))
       .map((b) => b.match(/url\((https:\/\/[^)]+\.woff2)\)/)?.[1])
       .filter(Boolean)
-      .map((u) => `<link crossorigin="" href="${u}" rel="preload" as="font"/>`);
+      .map((u) => `<link crossorigin="" fetchpriority="low" href="${u}" rel="preload" as="font"/>`);
     return { css, preloads };
   } catch (e) {
     console.warn("font fetch failed, keeping remote stylesheet:", e.message);

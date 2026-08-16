@@ -17,17 +17,20 @@ Static landing site for **Socialitea**, a tea & coffee specialist cafe in Tanjun
 
 - Plain HTML + CSS + JS, no runtime framework
 - [Tailwind CSS](https://tailwindcss.com) compiled to a static, minified `assets/css/tailwind.css` (see `tailwind.config.js`, content-scanned from `./*.html`); no CDN script at runtime
-- [Google Fonts](https://fonts.google.com) (Playfair Display, Space Mono) with `display=swap` + preconnect
+- [Google Fonts](https://fonts.google.com) (Playfair Display, Space Mono) with `display=swap`, inline `@font-face` + Latin subset preloads at build time
 - Custom line-art SVG icon sprite: `assets/icons.svg`, referenced via `<use href="assets/icons.svg#...">`
-- Shared styles/scripts: `assets/css/site.css`, `assets/js/site.js` (nav scroll state, mobile menu, scroll reveal, menu filter, image loading skeletons)
+- Shared styles/scripts: `assets/css/site.css`, `assets/js/site.js` (nav scroll state, mobile menu, scroll reveal, menu filter, image loading skeletons); JS is minified into `dist/` by the build
 - Local WebP images in `assets/img/`; favicon, apple-touch-icon, and PWA icons included
 - SEO: per-page canonical/OG/Twitter metadata, JSON-LD (`CafeOrCoffeeShop`), `robots.txt`, `sitemap.xml`
 
 ## Build
 
+Production build (used by Vercel): inlines the compiled Tailwind CSS + `site.css` + Google Fonts `@font-face` into each page, minifies `site.js` (esbuild), preloads the used Latin font subsets, and outputs everything to `dist/`:
+
 ```sh
 npm install
-npm run build   # tailwindcss -> assets/css/tailwind.css (minified)
+npm run build   # node scripts/build.mjs -> dist/
+npm run css     # dev-only: tailwindcss -> assets/css/tailwind.css
 ```
 
 ## Run locally
@@ -40,7 +43,7 @@ Then open http://localhost:8000.
 
 ## Deploy
 
-Static site, works with Vercel/Netlify/GitHub Pages as-is (no build command, output = repo root). Point the domain root at `index.html`; the repo is configured for Vercel (`.gitignore` includes `.vercel/`).
+Vercel (configured via `vercel.json`): `buildCommand: npm run build`, `outputDirectory: dist`. Also works on Netlify/GitHub Pages by serving the `dist/` folder produced by `npm run build`.
 
 ## Business info
 
